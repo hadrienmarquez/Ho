@@ -1,7 +1,6 @@
 /* global.css
  * Global styles
  ================================*/
-
 /*------------------------------------*\
         IMPORTS
 \*------------------------------------*/
@@ -9,3 +8,24 @@
 @import url("./local.reset.css");
 @import url("./typography.css");
 @import url("./color.css");
+
+
+body {
+        background-color: var(--light-background);
+}
+
+
+/*------------------------------------*\
+        COLOR CLASSES
+\*------------------------------------*/
+.red {
+        color: var(--cg-red);
+}
+
+.green {
+        color: var(--middle-green);
+}
+
+.yellow {
+        color: var(--max-yellow-red);
+}

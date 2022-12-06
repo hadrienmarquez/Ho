@@ -1,0 +1,35 @@
+/* COLORS.CSS 
+ * Defining global color schemes
+ ================================*/
+
+ :root {
+    /* LIGHT THEME
+    +++++++++++++++*/
+
+    /* Background 
+         ********************/
+    --light-background: #f8f6f5;
+
+    /* Primary text
+         ********************/
+    --light-primary-text: #242121;
+
+    /* DARK THEME
+    +++++++++++++++*/
+    /*We'll see later*/
+
+    /* PONCTUEL
+    +++++++++++++++*/
+
+    /*  CG RED
+    **********************/
+    --cg-red: #E03C31;
+
+    /*  MIDDLE GREEN
+    **********************/
+    --middle-green: #4F894D;
+
+    /*  MAXIMUM YELLOW RED
+    **********************/
+    --max-yellow-red: #E7B248;
+}

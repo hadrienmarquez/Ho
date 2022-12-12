@@ -1,8 +1,10 @@
 <script lang="ts">
-    let hidden: string = "bg-yellow-400";
+    import { fade } from 'svelte/transition';
+    let visible = false;
 
     function handleClick() {
-        hidden = hidden === "hidden" ? "bg-yellow-400" : "hidden";
+        visible = !visible;
+        console.log(visible)
     }
 </script>
 
@@ -24,17 +26,28 @@
 
 
 <!-- Popup container class -->
-<div class="flex items-start justify-end fixed top-0 left-0 w-full h-full {hidden} z-50 bg-opacity-80" >
+{#if visible}
+<div in:fade="{{duration: 150}}" out:fade="{{duration: 200}}" class="flex items-start justify-end fixed top-0 left-0 w-full h-full bg-yellow-300 bg-opacity-80 z-50" >
     <div class="bg-green-700 rounded-full w-[250px] h-[250px] m-2 md:w-[500px] md:h-[500px]">
-        <div class="flex flex-col items-center justify-around h-full overflow-hidden">
+        <div class="flex flex-col items-center justify-around h-full">
             <div class="flex flex-col justify-between items-center space-y-2 text-3xl mt-10 md:text-6xl md:space-y-10 md:mb-7 h-fit">
-                <a href="/a-propos" class="text-brown-100 font-maragsa">À propos</a>
-                <a href="/journal-de-bord" class="text-brown-100 font-maragsa">Journal de bord</a>
-                <a href="/contact" class="text-brown-100 font-maragsa">Contact</a>
+                <a href="/a-propos" class="text-brown-100 font-maragsa z-10  
+                relative  after:content-['À\00a0propos']  after:-z-10
+                 after:text-red-400
+                 after:absolute after:pointer-events-none after:duration-300 after:opacity-0 after:top-0 after:left-0 after:transition-all after:ease-in-out  hover:after:opacity-100 hover:after:left-1">À&nbsp;propos</a>
+                <a href="/journal-de-bord" class="text-brown-100 font-maragsa z-10  
+                relative after:content-['Journal\0000a0de\0000a0bord']  after:-z-10
+                 after:text-red-400
+                 after:absolute after:pointer-events-none after:duration-300 after:opacity-0 after:top-0 after:left-0 after:transition-all after:ease-in-out  hover:after:opacity-100 hover:after:left-1">Journal&nbsp;de&nbsp;bord</a>
+                <a href="/contact" class="text-brown-100 font-maragsa z-10  
+                relative  after:content-['Contact']  after:-z-10
+                 after:text-red-400
+                 after:absolute after:pointer-events-none after:duration-300 after:opacity-0 after:top-0 after:left-0 after:transition-all after:ease-in-out  hover:after:opacity-100 hover:after:left-1">Contact</a>
             </div>
-            <button on:click={handleClick} class=" text-brown-100 text-xl  font-maragsa md:text-3xl font-bold">X</button>
+            <button on:click={handleClick} class="relative text-xl text-center h-8 w-8 md:h-12 md:w-12 md:text-3xl font-bold text-brown-100 z-10 font-maragsa after:rounded-full after:absolute after:-z-10 after:scale-0 after:top-0 after:-left-0 after:w-full after:h-full after:bg-red-400 hover:after:scale-150 after:transition-transform">X</button>
         </div>
     </div>
     <!-- Popup Menu -->
 
 </div>
+{/if}

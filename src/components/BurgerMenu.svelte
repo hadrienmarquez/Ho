@@ -1,8 +1,8 @@
 <script lang="ts">
-    let hidden: string = "hidden";
+    let hidden: string = "bg-yellow-400";
 
     function handleClick() {
-        hidden = hidden === "hidden" ? "bg-red-400" : "hidden";
+        hidden = hidden === "hidden" ? "bg-yellow-400" : "hidden";
     }
 </script>
 
@@ -20,8 +20,21 @@
     </button>
 </div>
 
+
+
+
 <!-- Popup container class -->
-<div class="fixed top-0 left-0 w-full h-full {hidden} z-50">
+<div class="flex items-start justify-end fixed top-0 left-0 w-full h-full {hidden} z-50 bg-opacity-80" >
+    <div class="bg-green-700 rounded-full w-[250px] h-[250px] m-2 md:w-[500px] md:h-[500px]">
+        <div class="flex flex-col items-center justify-around h-full overflow-hidden">
+            <div class="flex flex-col justify-between items-center space-y-2 text-3xl mt-10 md:text-6xl md:space-y-10 md:mb-7 h-fit">
+                <a href="/a-propos" class="text-brown-100 font-maragsa">À propos</a>
+                <a href="/journal-de-bord" class="text-brown-100 font-maragsa">Journal de bord</a>
+                <a href="/contact" class="text-brown-100 font-maragsa">Contact</a>
+            </div>
+            <button on:click={handleClick} class=" text-brown-100 text-xl  font-maragsa md:text-3xl font-bold">X</button>
+        </div>
+    </div>
     <!-- Popup Menu -->
-    <button on:click={handleClick}>Close Me</button>
+
 </div>

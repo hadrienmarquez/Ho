@@ -1,9 +1,15 @@
----  
-import BurgerMenu from "./BurgerMenu.svelte";  
 ---
-<nav class="fixed w-full top-0 left-0 flex justify-between px-8 md:px-12">
-    
-    <a href="/" class="font-maragsa text-7xl text-red-500 relative after:content-['Ho!me'] after:text-brown-500 after:-z-10 after:absolute after:pointer-events-none after:duration-200 after:opacity-0 after:top-0 after:left-0 after:transition-all after:ease-out  hover:after:left-1 hover:after:opacity-100 ">Ho!</a>
+import BurgerMenu from "./BurgerMenu.svelte";
+import DisplaceLink from "./DisplaceLink.svelte";
+---
 
-    <BurgerMenu client:load/>
+<nav class="fixed w-full top-0 left-0 flex justify-between px-8 md:px-12">
+    <DisplaceLink
+        class="text-7xl text-red-500 after:text-brown-500"
+        after_content="Ho!me"
+        url="/">Ho!</DisplaceLink
+    >
+
+
+    <BurgerMenu client:load />
 </nav>

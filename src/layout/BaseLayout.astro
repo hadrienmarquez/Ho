@@ -1,10 +1,9 @@
 ---
-import '../styles/base.css'
-import Navigation from '../components/Navigation.astro';
+import "../styles/base.css";
+import Navigation from "../components/Navigation.astro";
+import MomentumWrapper from "../components/MomentumWrapper.svelte";
 
-
-const {pageTitle} = Astro.props;
-
+const { pageTitle } = Astro.props;
 ---
 
 <html class="bg-brown-100" lang="en">
@@ -15,8 +14,12 @@ const {pageTitle} = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{pageTitle + " • Ho!"}</title>
 	</head>
+
 	<body>
 		<Navigation />
-		<slot />
+		<MomentumWrapper client:load>
+			
+			<slot />
+		</MomentumWrapper>
 	</body>
 </html>

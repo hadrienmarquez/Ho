@@ -54,6 +54,6 @@
     });
 </script>
 
-<div bind:this={momentum_wrapper} class="fixed w-screen top-0 left-0">
+<div bind:this={momentum_wrapper} class="fixed w-full top-0 left-0">
     <slot />
 </div>

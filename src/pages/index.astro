@@ -1,11 +1,82 @@
 ---
 import BaseLayout from "../layout/BaseLayout.astro";
-const pageTitle = "Accueil"
+const pageTitle = "Accueil";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-slate-400">Section One</div>
-    <div class=" h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-red-400">Section Two</div>
-    <div class=" h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-green-400">Section Three</div>
-    <div class=" h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-yellow-400">Section Four</div>
+    <div class="h-screen grid grid-cols-8 grid-rows-4">
+        <div
+            class="container flex lg:col-span-full lg:row-start-1 lg:row-end-3 lg:self-center lg:justify-self-center lg:justify-between lg:flex-grow lg:gap-x-16"
+        >
+            <p
+                class="font-maragsa text-brown-700 text-6xl md:text-5xl lg:text-5xl lg:text-right lg:basis-0 lg:self-center lg:flex-grow xl:text-6xl"
+            >
+                Un&nbsp;journal de bord <br /> motivationnel
+            </p>
+
+            <span class="w-0.5 bg-red-700"></span>
+
+            <div
+                class="relative lg:basis-0 lg:flex-grow font-maragsa text-brown-700 lg:text-2xl lg:flex lg:flex-between xl:text-3xl"
+            >
+                <p>
+                    1 an, 324&nbsp;jours, 22 heures, 56 secondes depuis le dernier
+                    article:
+                </p>
+                <button class="lg:self-end lg:mr-8"> Lire</button>
+            </div>
+        </div>
+
+        <img
+            class="object-cover h-[47%] w-full self-end row-span-full col-span-full mb-4"
+            src="/img/landscape.png"
+            alt="cactus drawing"
+        />
+
+        <button
+            class="bg-brown-200 hover:bg-red-400 col-start-1 col-end-3 row-start-4 row-end-5 self-end justify-self-end mb-4 rounded-full w-56 h-56 flex justify-center"
+        >
+            <img
+                class="object-contain"
+                src="/img/cactus.png"
+                alt="cactus drawing"
+            />
+        </button>
+
+        <button
+            class="bg-brown-200 hover:bg-green-400 col-start-7 col-end-8 row-start-3 row-end-4 self-end justify-self-center rounded-full w-28 h-28 flex justify-center"
+        >
+            <img
+                class="object-contain"
+                src="/img/cactus.png"
+                alt="cactus drawing"
+            />
+        </button>
+
+        <button
+            class="bg-brown-200 hover:bg-yellow-400 col-start-5 col-end-6 row-start-3 row-end-4 self-center justify-self-start rounded-full w-14 h-14 flex justify-center"
+        >
+            <img
+                class="object-contain"
+                src="/img/cactus.png"
+                alt="cactus drawing"
+            />
+        </button>
+    </div>
+
+    <div
+        class="h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-red-400"
+    >
+        Section Two
+    </div>
+    <div
+        class="h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-green-400"
+    >
+        Section Three
+    </div>
+    <div
+        class="h-screen flex justify-center items-center text-brown-600 font-maragsa text-9xl bg-yellow-400"
+    >
+        Section Four
+    </div>
 </BaseLayout>
